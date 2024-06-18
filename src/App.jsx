@@ -2,15 +2,23 @@ import React from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
+import DisplayData from './pages/DisplayData'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-    <div>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/display_data' element={() => {}}/>
-      </Routes>
-    </div>
+    <>
+      <nav className='fixed w-full bg-white shadow-md'>
+        <Navbar />
+      </nav>
+
+      <div>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/display_data' element={<DisplayData />} />
+        </Routes>
+      </div>
+    </>
   )
 }
 
